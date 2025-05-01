@@ -1,3 +1,4 @@
+"use client";
 import { merriweather, notoSerif } from "@/app/_styles/font";
 import passport from "@/public/passport.png";
 import Image from "next/image";
@@ -12,7 +13,6 @@ function About() {
         <h2
           className={`${notoSerif?.className} text-center text-[40px] font-bold text-white md:text-[45px] lg:text-left lg:text-[50px]`}
           data-aos="fade-up"
-          data-aos-duration="100"
         >
           Lawal Ridwan
         </h2>
@@ -20,7 +20,6 @@ function About() {
         <p
           className={`mt-2 text-[22px] font-light tracking-wide text-gray-100 lg:mt-3 lg:text-[24px] ${merriweather?.className} max-w-[700px] leading-[1.8]`}
           data-aos="fade-up"
-          data-aos-duration="300"
         >
           I&apos;m a dedicated{" "}
           <span className="font-semibold text-white">Front-End Developer</span>{" "}
@@ -44,9 +43,3 @@ function About() {
 }
 
 export default About;
-
-// With a strong foundation
-//             in HTML, CSS, JavaScript, and React, I excel in turning complex
-//             designs into functional user experiences. I am committed to
-//             continuous professional development and collaboration to deliver
-//             high-quality solutions.

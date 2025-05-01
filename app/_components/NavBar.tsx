@@ -87,7 +87,7 @@ function NavBar() {
                 ))}
                 <a
                   href="/Resume-ridwan.pdf"
-                  download="CV-Ridwan.pdf"
+                  download="Resume-ridwan.pdf"
                   onClick={() => setMenuIsClicked(false)}
                 >
                   <Button>Resume</Button>

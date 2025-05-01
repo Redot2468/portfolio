@@ -1,3 +1,5 @@
+"use client";
+
 import { notoSerif } from "@/app/_styles/font";
 import devjobs from "@/public/projects/devjobs.webp";
 import dictionary from "@/public/projects/dictionary.webp";

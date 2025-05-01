@@ -1,3 +1,5 @@
+"use client";
+
 import { notoSerif } from "@/app/_styles/font";
 
 const EXPERIENCES = [

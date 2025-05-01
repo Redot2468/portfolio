@@ -1,3 +1,5 @@
+"use client";
+
 import { TECHNOLOGIES } from "@/app/_lib/constant";
 import { merriweather } from "@/app/_styles/font";
 
