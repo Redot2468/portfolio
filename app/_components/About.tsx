@@ -12,7 +12,7 @@ function About() {
         <h2
           className={`${notoSerif?.className} text-center text-[40px] font-bold text-white md:text-[45px] lg:text-left lg:text-[50px]`}
           data-aos="fade-up"
-          data-aos-duration="400"
+          data-aos-duration="100"
         >
           Lawal Ridwan
         </h2>
@@ -20,7 +20,7 @@ function About() {
         <p
           className={`mt-2 text-[22px] font-light tracking-wide text-gray-100 lg:mt-3 lg:text-[24px] ${merriweather?.className} max-w-[700px] leading-[1.8]`}
           data-aos="fade-up"
-          data-aos-duration="600"
+          data-aos-duration="300"
         >
           I&apos;m a dedicated{" "}
           <span className="font-semibold text-white">Front-End Developer</span>{" "}

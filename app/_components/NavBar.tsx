@@ -86,7 +86,7 @@ function NavBar() {
                   </li>
                 ))}
                 <a
-                  href="/CV-Ridwan.pdf"
+                  href="/Resume-ridwan.pdf"
                   download="CV-Ridwan.pdf"
                   onClick={() => setMenuIsClicked(false)}
                 >
