@@ -1,71 +1,104 @@
 "use client";
 
-import { useNavBar } from "@/app/_hooks/useNavBar";
-import { NAV_ITEMS } from "@/app/_lib/constant";
-import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
+import Button from "@/app/_components/Button";
+import { useNavFixed } from "@/app/_hooks/useNavFixed";
+import logo2 from "@/public/icons/logo2.svg";
 import { AnimatePresence, motion } from "motion/react";
-import Link from "next/link";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { HiMiniXMark } from "react-icons/hi2";
 import { RiMenu4Fill } from "react-icons/ri";
 
-export default function NavBar() {
-  const { isMobileNavOpen, onToggleNav, navFixedOnScroll } = useNavBar();
+function NavBar() {
+  const [menuIsClicked, setMenuIsClicked] = useState(false);
+  const isNavFixed = useNavFixed();
+  const refEl = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function onCloseMenu(e: MouseEvent) {
+      if (!e.target) return;
+      const targetEl = e.target as HTMLDivElement;
+
+      if (targetEl.classList.contains("nav-overlay")) {
+        console.log(targetEl.classList);
+        setMenuIsClicked(false);
+      }
+    }
+
+    window.addEventListener("click", onCloseMenu);
+
+    return () => window.removeEventListener("click", onCloseMenu);
+  }, []);
 
   return (
-    <nav className="border-b border-gray-100">
-      <div
-        className={`mx-auto flex w-full max-w-[1200px] items-center justify-between px-4 py-4 ${navFixedOnScroll && "fixed bg-white/70 shadow-sm shadow-gray-200 backdrop-blur-[4px]"} transition-all duration-200`}
-      >
-        <h2 className="text-[21px]">Ridwan&apos;s Portfolio</h2>
-        <div className="flex items-center gap-8">
-          <Button asChild className="hidden sm:block">
-            <Link href="https://www.linkedin.com/in/ridwan-lawal-162284257/">
-              Let&apos;s Connect
-            </Link>
-          </Button>
-          <button className="cursor-pointer" onClick={onToggleNav}>
-            <RiMenu4Fill className="size-[21px]" />
-          </button>
-        </div>
-      </div>
+    <nav
+      className={`z-50 transition-all ${
+        isNavFixed
+          ? "fixed top-0 w-full bg-black/40 py-5 shadow-lg backdrop-blur-sm md:py-4"
+          : "static py-7"
+      }`}
+    >
+      <div className="mx-auto flex w-full max-w-[1220px] flex-wrap items-center justify-between px-10 md:flex-nowrap">
+        <section className="z-50 m-0">
+          <Image
+            src={logo2}
+            alt="logo"
+            quality={100}
+            priority={true}
+            className="w-[53px] brightness-0 invert md:w-14"
+          />
+        </section>
 
-      {/* menu items */}
-      {/* overlay */}
-      <AnimatePresence>
-        {isMobileNavOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: -300 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -300 }}
-            transition={{ ease: "easeIn", duration: 0.15 }}
-            className="black menu-overlay fixed top-0 z-30 h-screen w-full border-2 border-green-500 bg-white/10 backdrop-blur-[3px]"
-          >
-            {/* menu */}
-            <div className="flex h-screen w-[90%] flex-col bg-white px-4 py-3 text-gray-900 shadow-md drop-shadow sm:w-[50%]">
-              <section className="relative right-0 flex h-10 justify-end">
-                <X onClick={onToggleNav} className="size-5 cursor-pointer" />
-              </section>
-              <ul className="flex flex-grow flex-col items-center gap-8 pt-20">
-                {NAV_ITEMS?.map((navItem) => (
-                  <li
-                    key={navItem}
-                    className="group flex cursor-pointer flex-col items-center"
-                  >
-                    <span className="text-[17px] capitalize transition-colors group-hover:text-gray-700">
-                      {navItem}
-                    </span>
-                    <p className="w-0 border border-gray-900 opacity-0 transition-all duration-300 group-hover:w-full group-hover:opacity-100" />
+        <section
+          onClick={() => setMenuIsClicked((curState) => !curState)}
+          className={`m-0 w-fit cursor-pointer text-[25px] text-white md:text-3xl ${
+            menuIsClicked ? "rotate-180" : "rotate-0"
+          } z-50 transition-transform duration-300`}
+        >
+          {menuIsClicked ? (
+            <HiMiniXMark />
+          ) : (
+            <RiMenu4Fill className="text-white" />
+          )}
+        </section>
+        <AnimatePresence>
+          {menuIsClicked && (
+            <div
+              className="nav-overlay fixed top-0 left-0 z-30 h-screen w-full bg-black/40 backdrop-blur-[2px]"
+              ref={refEl}
+            >
+              <motion.ul
+                className={`nav-items top-0 left-0 z-10 flex h-screen w-full flex-col items-center justify-center gap-7 overflow-hidden bg-[#0e0e0e] px-6 md:w-[50%] md:py-12`}
+                initial={{ x: -700, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -700, opacity: 0 }}
+                transition={{ ease: "easeIn" }}
+              >
+                {["About", "Projects", "Contact"].map((link, id) => (
+                  <li key={id} className="group flex flex-col gap-1">
+                    <a
+                      onClick={() => setMenuIsClicked(false)}
+                      href={`#${link.toLowerCase()}`}
+                    >
+                      {link}
+                    </a>
+                    <div className="w-0 rounded-2xl border-b-2 border-white opacity-0 transition-all duration-300 group-hover:w-full group-hover:opacity-100" />
                   </li>
                 ))}
-              </ul>
+                <a
+                  href="/CV-Ridwan.pdf"
+                  download="CV-Ridwan.pdf"
+                  onClick={() => setMenuIsClicked(false)}
+                >
+                  <Button>Resume</Button>
+                </a>
+              </motion.ul>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
+      </div>
     </nav>
   );
 }
 
-//fix the nav
-// after push it to main branch
-// create a new branch for each new feature
+export default NavBar;
