@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "packageManager": "npm@10.5.2",
   "overrides": {
@@ -15,26 +16,33 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",
+    "aos": "^3.0.0-beta.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.501.0",
     "motion": "^12.7.4",
     "next": "15.3.1",
+    "next-animation": "^1.0.8",
+    "next-sitemap": "^4.2.3",
     "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "react": "^19.0.0",
+    "react-animated-cursor": "^2.11.2",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
+    "prettier": "^3.5.3",
     "react-icons": "^5.5.0",
+    "react-loader-spinner": "^6.1.6",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.2.7",
     "typescript": "^5"

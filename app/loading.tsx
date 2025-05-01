@@ -1,5 +1,9 @@
-import React from "react";
+"use client";
 
-export default function Loading() {
-  return <div>Loading...</div>;
+import Loader from "@/app/_components/Loader";
+
+function Loading() {
+  return <Loader />;
 }
+
+export default Loading;
