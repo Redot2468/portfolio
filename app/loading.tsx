@@ -1,5 +1,3 @@
-"use client";
-
 import Loader from "@/app/_components/Loader";
 
 function Loading() {
