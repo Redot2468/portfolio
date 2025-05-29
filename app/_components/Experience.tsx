@@ -66,9 +66,7 @@ export default function Experience() {
                   key={task}
                   className="text-preset-1 font-extralight lg:text-[18px]"
                 >
-                  Enhanced multiple front-end projects by applying responsive
-                  design principles, improving accessibility and user engagement
-                  across devices
+                  {task}
                 </li>
               ))}
             </ul>
