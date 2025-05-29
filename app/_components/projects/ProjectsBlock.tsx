@@ -86,10 +86,7 @@ function ProjectsBlock() {
               key={index}
               stack={project?.stack}
             >
-              A platform where developers can browse and apply for job
-              opportunities. Implemented features such as job listing, and
-              search and filtering functionalities using the React library and
-              the Context API for state management.
+              {project?.about}
             </ProjectCard>
           ))}
         </div>
