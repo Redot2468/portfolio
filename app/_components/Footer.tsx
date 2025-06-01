@@ -35,7 +35,7 @@ function Footer() {
 
             <li>
               <a
-                href="https://x.com/Ridwan_evd"
+                href="https://x.com/ibnCodes"
                 target="_blank"
                 rel="noopener noreferrer"
               >
