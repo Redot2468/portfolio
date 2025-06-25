@@ -11,7 +11,7 @@ interface ProjectCardProps {
   children: React.ReactNode;
   thumbnail: StaticImageData;
   preview: string;
-  github: string;
+  github?: string;
   stack: string;
   name: string;
 }
@@ -51,9 +51,11 @@ function ProjectCard({
             <IoLink className="-rotate-45 text-white" />
           </ProjectLink>
 
-          <ProjectLink linkText="View Code" link={github}>
-            <FaGithub className="text-white" />
-          </ProjectLink>
+          {github && (
+            <ProjectLink linkText="View Code" link={github}>
+              <FaGithub className="text-white" />
+            </ProjectLink>
+          )}
         </section>
       </section>
     </div>

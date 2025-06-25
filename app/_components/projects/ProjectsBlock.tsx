@@ -3,6 +3,7 @@
 import { notoSerif } from "@/app/_styles/font";
 import devjobs from "@/public/projects/devjobs.webp";
 import dictionary from "@/public/projects/dictionary.webp";
+import dsifootball from "@/public/projects/dsi-football.png";
 import finance from "@/public/projects/finance.webp";
 import furn from "@/public/projects/furn.webp";
 import invoicely from "@/public/projects/invoice.webp";
@@ -10,6 +11,14 @@ import invoicely from "@/public/projects/invoice.webp";
 import ProjectCard from "./ProjectCard";
 
 const PROJECTS = [
+  {
+    name: "DSI Football",
+    thumbnail: dsifootball,
+    stack: "Next.js, TypeScript, Postgres, TailwindCSS, Shadcn, Auth.js",
+    preview: "https://dsifootball.live",
+    about:
+      "A football sport writing platform built for DSI Football, a football sport company, dedicated to delivering back-to-back football content, a consistent flow of updates, covering various aspects of the sport. ",
+  },
   {
     name: "Finance",
     thumbnail: finance,
