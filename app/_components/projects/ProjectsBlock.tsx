@@ -1,12 +1,9 @@
-"use client";
-
 import { notoSerif } from "@/app/_styles/font";
-import devjobs from "@/public/projects/devjobs.webp";
-import dictionary from "@/public/projects/dictionary.webp";
+import kanban from "@/public/projects/darkmode.png";
 import dsifootball from "@/public/projects/dsi-football.png";
-import finance from "@/public/projects/finance.webp";
 import furn from "@/public/projects/furn.webp";
-import invoicely from "@/public/projects/invoice.webp";
+import Nora from "@/public/projects/nora.png";
+import ZenGuide from "@/public/projects/zenguide.png";
 
 import ProjectCard from "./ProjectCard";
 
@@ -20,25 +17,42 @@ const PROJECTS = [
       "A football sport writing platform built for DSI Football, a football sport company, dedicated to delivering back-to-back football content, a consistent flow of updates, covering various aspects of the sport. ",
   },
   {
-    name: "Finance",
-    thumbnail: finance,
-    github: "https://github.com/Ridwan-Lawal/Personal-finance-app",
-    stack: "Next.js, TypeScript, Supabase, TailwindCSS",
-    preview: "https://personal-finance-app-ochre.vercel.app/",
+    name: "Nora AI",
+    thumbnail: Nora,
+    stack: "Next.js, TypeScript.",
+    preview: "https://noramum.app/",
     about:
-      " A dashboard-style web application designed to help individuals to monitor their income, expenses, savings, and spending habits in an organized and interactive way ",
+      "NORA is an AI-powered companion built to support mums with quick answers, daily guidance, emotional support, and practical tools for every stage of motherhood. ",
+  },
+  // {
+  //   name: "Finance",
+  //   thumbnail: finance,
+  //   github: "https://github.com/Ridwan-Lawal/Personal-finance-app",
+  //   stack: "Next.js, TypeScript, Supabase, TailwindCSS",
+  //   preview: "https://personal-finance-app-ochre.vercel.app/",
+  //   about:
+  //     " A dashboard-style web application designed to help individuals to monitor their income, expenses, savings, and spending habits in an organized and interactive way ",
+  // },
+  {
+    name: "Kanban",
+    thumbnail: kanban,
+    github: "https://github.com/Ridwan-Lawal/Kanban",
+    stack:
+      "Next.js, TypeScript, Postgres (Neon), TailwindCSS, Shadcn, Better Auth",
+    preview: "https://kanban-lilac-ten.vercel.app/",
+    about:
+      "This is a robust, full-stack Kanban board application designed to streamline project management and boost team productivity. ",
   },
 
   {
-    name: "Invoicely",
-    thumbnail: invoicely,
-    github: "https://github.com/Ridwan-Lawal/Invoicely",
-    stack: "Next.js, JavaScript, Supabase, TailwindCSS",
-    preview: "https://invoicely-nuld.vercel.app/user/signin",
+    name: "ZenGuide",
+    thumbnail: ZenGuide,
+    github: "https://github.com/Ridwan-Lawal/ZenGuide/",
+    stack: "Next.js, TypeScript, Supabase, TailwindCSS",
+    preview: "https://zen-guide-pi.vercel.app/",
     about:
-      "An app that serves as a streamlined tool for individuals or businesses to handle billing processes, offering an organized way to create detailed invoices, monitor payment statuses, and maintain financial records",
+      "A comprehensive onboarding tour platform built with Next.js, Convex, and modern web technologies. This platform enables businesses to create, manage, and analyze interactive onboarding tours for their users.",
   },
-
   {
     name: "Furn",
     thumbnail: furn,
@@ -47,26 +61,6 @@ const PROJECTS = [
     preview: "https://github.com/Redot2468/FURN-page",
     about:
       "A modern e-commerce platform designed to showcase and sell furniture in a visually appealing and user-friendly way. ",
-  },
-
-  {
-    name: "dictionary",
-    thumbnail: dictionary,
-    github: "https://github.com/Ridwan-Lawal/dictionary-react",
-    stack: "React, JavaScript, TailwindCSS, React-router",
-    preview: "https://dictionary-react-ruby.vercel.app/",
-    about:
-      " A user-friendly dictionary app designed to provide fast, accurate definitions, synonyms, and translations at your fingertips. Built from a project on Frontend Mentor.",
-  },
-
-  {
-    name: "DevJobs",
-    thumbnail: devjobs,
-    github: "https://github.com/Ridwan-Lawal/dev-jobs",
-    preview: "https://dev-jobs-orpin.vercel.app/",
-    stack: "React, JavaScript, React-router, TailwindCSS",
-    about:
-      " A platform where developers can browse and apply for job opportunities. Implemented features such as job listing, and search and filtering functionalities using the React library and the Context API for state management.",
   },
 ];
 

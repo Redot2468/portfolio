@@ -4,7 +4,31 @@ import { notoSerif } from "@/app/_styles/font";
 
 const EXPERIENCES = [
   {
-    job: "Frontend developer (Intern)",
+    job: "Frontend Developer",
+    company: "Emerj",
+    timeline: "December 2025 - Present",
+    tasks: [],
+  },
+  {
+    job: "Software Developer",
+    company: "DSI Football",
+    timeline: "May 2025 - November 2025",
+    tasks: [
+      "DSI Fooball is a company that releases articles on football all across the globe. ",
+      "I built the entire admin dashboard for managing contents and staffs, the user-facing site where users could read article from start to finish i.e Requirements to Deployment.",
+    ],
+  },
+  {
+    job: "Frontend Developer",
+    company: "HNG Internship",
+    timeline: "Feb - April 2025",
+    tasks: [
+      "Built several web applications ranging from Management systems, e-commercise sites to social media application using React-native.",
+      "Completed all 10 stages successfully, and was one of the 400 candidates that graduated out of 12000 initial candidates.",
+    ],
+  },
+  {
+    job: "Frontend developer",
     company: "D'HuB Technologies",
     timeline: "Aug 2024 - Jan 2025",
     tasks: [
